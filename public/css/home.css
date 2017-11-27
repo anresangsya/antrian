@@ -1,0 +1,33 @@
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.navbar-header img{
+	padding: 7px;
+}
+
+#myNavbar{
+	padding: 7px;
+}
+
+.navbar-inverse{
+	background-color: #339966;
+}
+
+.well img{
+	width:20%;
+	float: left;
+}
+
+.carousel-inner img {
+  width: 100%; /* Set width to 100% */
+  min-height: 200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+  .carousel-caption {
+	display: none; 
+  }
+}

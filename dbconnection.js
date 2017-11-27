@@ -3,9 +3,10 @@ var connection=mysql.createPool({
 
 host:'localhost',
 user:'root',
-password:'',
-database:'demo'
+password:'akulali',
+database:'antrian'
 
 
 });
+
 module.exports=connection;
