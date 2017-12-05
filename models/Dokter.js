@@ -15,6 +15,10 @@ var Dokter = {
 	    return db.query("SELECT * FROM dokter LEFT JOIN poli ON dokter.id_poli=poli.id_poli where dokter.id_dokter=?", [id], callback);
 	},
 
+	getDokterByIdPoli:function(id, callback){
+	    return db.query("SELECT * FROM dokter LEFT JOIN poli ON dokter.id_poli=poli.id_poli where dokter.id_poli=?", [id], callback);
+	},
+
 	addDokter:function(Dokter, callback){
 		console.log("inside service");
 		console.log(Dokter.id_dokter);

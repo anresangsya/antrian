@@ -34,6 +34,22 @@ router.get('/api/:id?',function(req, res, next){
     }
 });
 
+router.get('/api/poli/:id?',function(req, res, next){
+    Dokter.getDokterByIdPoli(req.params.id, function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        else{
+            if (rows < 1) {
+                res.json({status:false, message:"Gagal", data:rows});
+            } else {
+                res.json({status:true, message:"Berhasil", data:rows});
+            }
+        }
+    });
+});
+
 router.post('/api/',function(req, res, next){
     Dokter.addDokter(req.body, function(err, count){
         //console.log(req.body);
