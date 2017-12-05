@@ -12,6 +12,7 @@ router.get('/api/:id?',function(req, res, next){
             }
             else{
                 res.json(rows);
+                // res.json({success:true, message:"Berhasil", data:rows});
             }
         });
     }

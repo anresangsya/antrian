@@ -11,7 +11,11 @@ router.get('/api/:id?',function(req, res, next){
                 res.json(err);
             }
             else{
-                res.json(rows);
+                if (rows < 1) {
+                    res.json({status:false, message:"Gagal", data:rows});
+                } else {
+                    res.json({status:true, message:"Berhasil", data:rows});
+                }
             }
         });
     }
@@ -19,11 +23,11 @@ router.get('/api/:id?',function(req, res, next){
         Dokter.getAllDokter(function(err, rows){
             if(err)
             {
-                res.json(err);
+                res.json({status:false, message:"Gagal", data:err});
             }
             else
             {
-                res.json(rows);
+                res.json({status:true, message:"Berhasil", data:rows});
             }
      
         });
