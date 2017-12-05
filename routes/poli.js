@@ -11,8 +11,11 @@ router.get('/api/:id?',function(req, res, next){
                 res.json(err);
             }
             else{
-                res.json(rows);
-                // res.json({success:true, message:"Berhasil", data:rows});
+                if (rows < 1) {
+                    res.json({status:false, message:"Gagal", data:rows});
+                } else {
+                    res.json({status:true, message:"Berhasil", data:rows});
+                }
             }
         });
     }
@@ -20,11 +23,11 @@ router.get('/api/:id?',function(req, res, next){
         Poli.getAllPoli(function(err, rows){
             if(err)
             {
-                res.json(err);
+                res.json({status:false, message:"Gagal", data:err});
             }
             else
             {
-                res.json(rows);
+                res.json({status:true, message:"Berhasil", data:rows});
             }
      
         });

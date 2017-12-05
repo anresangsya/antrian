@@ -6,11 +6,13 @@ var timeStamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
 var Dokter = {
 
 	getAllDokter:function(callback){
-		return db.query("SELECT * FROM dokter", callback);
+		return db.query("SELECT * FROM dokter LEFT JOIN poli ON dokter.id_poli=poli.id_poli", callback);	
+		// return db.query("SELECT d.id_dokter, d.id_poli, p.nama_poli FROM dokter d LEFT JOIN poli p ON d.id_poli=p.id_poli", callback);
+
 	},
 
 	getDokterById:function(id, callback){
-	    return db.query("SELECT * FROM dokter where id_dokter=?", [id], callback);
+	    return db.query("SELECT * FROM dokter LEFT JOIN poli ON dokter.id_poli=poli.id_poli where dokter.id_dokter=?", [id], callback);
 	},
 
 	addDokter:function(Dokter, callback){
