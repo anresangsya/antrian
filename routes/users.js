@@ -26,18 +26,22 @@ router.post('/login', function(req, res, next) {
 			        });
 		      	} else {
 		      		res.send({
-			          "status":204,
+			          "status":201,
 			          "message":"Email and password does not match"
 			        });
 		      	}
 		  	} else{
 		  		res.send({
-			        "status":204,
+			        "status":202,
 			        "message":"Email does not exits"
 			     });
 			}
 		}
 	});
+});
+
+router.post('/register', function(req, res, next) {
+
 });
 
 module.exports = router;
