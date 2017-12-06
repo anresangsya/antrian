@@ -1,90 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Rumah Sakit Medika Surabaya</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		
-		<!-- Bootstrap Core CSS -->
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+<head>
+	<% include head %>
+</head>
+<body style="background-color:white;">
+	<% include navbar %>
 
-        <!-- MetisMenu CSS -->
-        <link href="../../css/metisMenu.min.css" rel="stylesheet">
-
-        <!-- Timeline CSS -->
-        <link href="../../css/timeline.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="../../css/startmin.css" rel="stylesheet">
-
-        <!-- Morris Charts CSS -->
-        <link href="../../css/morris.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
-		
-		<link rel="stylesheet" type="text/css" href="../../css/home.css">
-	</head>
-	<body style="background-color:white;">
-		<nav class="navbar navbar-inverse">
-		  <div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>                        
-				</button>
-				<img class="logo" src="../../images/logo.png"><a class="navbar-brand" href="index.php"></a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li><a href="index.php" style="color: #F1F8E9;">Home</a></li>
-					<li  class="active"><a href="daftarPoli.php" style="color: #F1F8E9;">Daftar Poli</a></li>
-					<li><a href="jadwalDokter.php" style="color: #F1F8E9;">Jadwal Dokter</a></li>
-					<li><a href="daftarDokter.php" style="color: #F1F8E9;">Profil Dokter</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<!--<li><a href="../../login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #F1F8E9;">
-							<i class="fa fa-user fa-fw" style="color: #F1F8E9;"></i> secondtruth <b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu dropdown-user">
-							<li><a href="profil.php"><i class="fa fa-user fa-fw" ></i> User Profile</a>
-							</li>
-							<!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-							</li>-->
-							<li class="divider"></li>
-							<li><a href="../../login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		  </div>
-		</nav>
-
-		<div class="container">
-			<div class="row">
-				<h1 align="center" height="30px"><b>DAFTAR POLI</b></h1>
-				<div class="col-sm-3">
-					<!--<button type="button" class="btn btn-success">Success</button>-->
-					<div class="well">
-						<!--<img src="../../images/calendar.png" class="img-responsive" alt="Image">-->
-						<h3 align="center">POLI  MATA</h3>
-						<img src="../../images/jadwal.png" class="img-responsive" alt="Image" style="width: 50%; margin-top: 10px; margin-left: 55px;">
-						<a href="detailPoli.php" class="btn btn-success" role="button" style="margin-top: 25px; margin-left: 70px;">Lihat Poli</a>
-					</div>
+	<div class="container">
+		<div class="row">
+			<h1 align="center" height="30px"><b> <%= title %> </b></h1>
+			<div class="col-sm-3">
+				<div class="well">
+					<h3 align="center">POLI  MATA</h3>
+					<img src="/images/jadwal.png" class="img-responsive" alt="Image" style="width: 50%; margin-top: 10px; margin-left: 55px;">
+					<a href="detailPoli.php" class="btn btn-success" role="button" style="margin-top: 25px; margin-left: 70px;">Lihat Poli</a>
 				</div>
 			</div>
-			<hr>
 		</div>
-
-		<!--<footer class="container-fluid text-center">
-		  <p>&copy; Rumah Sakit MEDIKA Surabaya 2017</p>
-		</footer>-->
-	</body>
+		<hr>
+	</div>
+</body>
 </html>

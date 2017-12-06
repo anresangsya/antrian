@@ -93,7 +93,7 @@ var url = 'localhost:3000/poli/api';
 
 // view
 router.get('/', function(req, res, next) {
-  res.render('poli', { title: 'Poli' });
+  res.render('poli', { title: 'Daftar Poli' });
 });
 
 
