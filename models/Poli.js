@@ -6,7 +6,7 @@ var timeStamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
 var Poli = {
 
 	getAllPoli:function(callback){
-		return db.query("SELECT * FROM poli", callback);
+		return db.query("SELECT * FROM poli ORDER BY nama_poli", callback);
 	},
 
 	getPoliById:function(id, callback){
