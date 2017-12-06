@@ -8,14 +8,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
-	var email = req.body.email;
-	var password = req.body.password;
+	var email = req.body.email,
+		password = req.body.password;
 
 	db.query("SELECT u.*, p.id_pasien, p.nama_pasien, p.tgl_lahir, p.telepon, p.alamat, p.bpjs FROM users u LEFT JOIN pasien p ON u.email=p.email WHERE u.email=?", [email], function(error, results, fields) {
 		if(error){
 			res.send({
 		      "status" : 400,
-		      "message" : "Gagal login"
+		      "message" : "Error ocurred"
 		    });
 		} else {
 			if(results.length > 0){
@@ -42,7 +42,32 @@ router.post('/login', function(req, res, next) {
 });
 
 router.post('/register', function(req, res, next) {
+	var timeStamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+	var email =  req.body.email,
+		password = req.body.password,
+		role = req.body.role,
+		id_pasien = req.body.id_pasien,	
+		tgl_lahir = req.body.tgl_lahir,
+		jk = req.body.jk,
+		telepon = req.body.telepon,
+		alamat = req.body.alamat,
+		bpjs = req.body.bpjs;
+		
 
+	db.query("INSERT INTO users (email, password, role) VALUES(?, ?, ?)",
+		[email, password, role], function(error, results, fields) {
+			if(error){
+			    res.send({
+			      "code":400,
+			      "failed":"error ocurred"
+			    });
+			} else {
+				res.send({
+			      "code":200,
+			      "success":"user registered sucessfully"
+			    });
+			}
+		});
 });
 
 module.exports = router;
