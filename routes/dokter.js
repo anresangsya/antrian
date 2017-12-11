@@ -14,12 +14,7 @@ router.get('/api/:id?',function(req, res, next){
                 if (rows < 1) {
                     res.json({status:false, message:"Gagal", data:rows});
                 } else {
-                    var jadwal = new Array();
-                    // Dokter.getJadwalDokter(req.params.id, function(error, row){
-                    //     jadwal = row;
-                    // });
-
-                    res.json({status:true, message:"Berhasil", data:{rows, jadwal:jadwal}});
+                    res.json({status:true, message:"Berhasil", data:rows});
                 }
             }
         });
