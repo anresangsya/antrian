@@ -107,7 +107,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/detail/:id', function(req, res, next) {
     var id = req.params.id;
-    request('http://localhost:3000/dokter/poli/api', [id], function(error, response, body) {
+    request('http://localhost:3000/dokter/poli/api/'+id, function(error, response, body) {
         var data = JSON.parse(body);
         res.json(data);
         // res.render('poli', { title: 'Daftar Poli', result: data.data});

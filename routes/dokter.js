@@ -35,8 +35,18 @@ router.get('/api/:id?',function(req, res, next){
 });
 
 router.get('/api/jadwal/:id?', function(req, res, next){
-    Dokter.getJadwalDokter(req.params.id, function(error, row){
-        res.json(row);
+    Dokter.getJadwalDokter(req.params.id, function(err, rows){
+        if(err)
+            {
+                res.json(err);
+            }
+            else{
+                if (rows < 1) {
+                    res.json({status:false, message:"Gagal", data:rows});
+                } else {
+                    res.json({status:true, message:"Berhasil", data:rows});
+                }
+            }
     });
 });
 
