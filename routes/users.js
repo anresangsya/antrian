@@ -23,18 +23,20 @@ router.post('/login', function(req, res, next) {
 			        res.send({
 			          "status":200,
 			          "message":"login sucessfull",
-			          "data" : results
+			          "data" : results[0]
 			        });
 		      	} else {
 		      		res.send({
 			          "status":201,
-			          "message":"Email and password does not match"
+			          "message":"Email and password does not match",
+			          "data" : {}
 			        });
 		      	}
 		  	} else{
 		  		res.send({
 			        "status":202,
-			        "message":"Email does not exits"
+			        "message":"Email does not exits",
+			        "data" : {}
 			     });
 			}
 		}
