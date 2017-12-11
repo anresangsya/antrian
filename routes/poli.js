@@ -92,19 +92,25 @@ router.put('/api/:id',function(req,res,next){
 // end API
 
 
-var url = 'localhost:3000/poli/api';
+var url = 'http://localhost:3000/poli/api';
 
 // view
 router.get('/', function(req, res, next) {
-    // request(url, function(error, response, body) {
-    //     // var data_poli = new Array();
-    //     // var data = JSON.parse(body).data_poli;
-    //     res.json(body);
-    //     console.log(body);
-    //     // res.render('poli', { title: 'Daftar Poli', result: body});
-    // }); 
-
+    request(url, function(error, response, body) {
+        // var data_poli = new Array();
+        var data = JSON.parse(body);
+        // res.json(data);
+        res.render('poli', { title: 'Daftar Poli', result: data.data});
+    }); 
 });
 
+router.get('/detail/:id', function(req, res, next) {
+    request('http://localhost:3000/dokter/', function(error, response, body) {
+        // var data_poli = new Array();
+        var data = JSON.parse(body);
+        res.json(data);
+        // res.render('poli', { title: 'Daftar Poli', result: data.data});
+    }); 
+});
 
 module.exports=router;

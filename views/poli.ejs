@@ -9,14 +9,19 @@
 	<div class="container">
 		<div class="row">
 			<h1 align="center" height="30px"><b> <%= title %> </b></h1>
-			<h2><%= result.id_poli  %></h2>
+			<h2><%= result[0].id_poli  %></h2>
+			
+			<% result.forEach(function(result) { %>
+
 			<div class="col-sm-3">
 				<div class="well">
-					<h3 align="center">POLI  MATA</h3>
-					<img src="/images/jadwal.png" class="img-responsive" alt="Image" style="width: 50%; margin-top: 10px; margin-left: 55px;">
+					<h3 align="center">Poli <%= result.nama_poli %> </h3>
+					<img src="<%= result.icon %>" class="img-responsive" alt="Image" style="width: 50%; margin-top: 10px; margin-left: 55px;">
 					<a href="detailPoli.php" class="btn btn-success" role="button" style="margin-top: 25px; margin-left: 70px;">Lihat Poli</a>
 				</div>
 			</div>
+
+			<% }); %>
 		</div>
 		<hr>
 	</div>

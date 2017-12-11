@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2017 at 09:25 PM
+-- Generation Time: Dec 11, 2017 at 10:50 AM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -127,6 +127,7 @@ CREATE TABLE `dokter` (
   `tgl_lahir` date NOT NULL,
   `email` varchar(100) NOT NULL,
   `id_poli` varchar(10) NOT NULL,
+  `foto` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -135,38 +136,38 @@ CREATE TABLE `dokter` (
 -- Dumping data for table `dokter`
 --
 
-INSERT INTO `dokter` (`id_dokter`, `nama_dokter`, `jk`, `tgl_lahir`, `email`, `id_poli`, `created_at`, `updated_at`) VALUES
-('DO001', 'dr. Arief Wijaya Rosli, Sp.A', 'Laki laki', '1975-10-30', 'rosliarief35@gmail.com', 'PO001', '2017-11-20 00:02:28', '2017-12-06 04:16:13'),
-('DO002', 'dr. Aniek Hartiwi, Sp.M', 'Perempuan', '1980-01-15', 'hartiwaniek_@gmail.com', 'PO004', '2017-11-20 00:05:11', '2017-12-06 04:17:29'),
-('DO003', 'dr. Rulik Rufiati, Sp.Ok', 'Perempuan', '1970-12-05', 'rulikRF_10@gmail.com', 'PO003', '2017-11-20 00:05:11', '2017-12-06 04:19:47'),
-('DO004', 'dr. Abdul Rochim, Sp.M', 'Laki laki', '1967-11-12', 'abdulrochim@gmail.com', 'PO004', '2017-11-20 00:06:40', '2017-12-06 04:20:13'),
-('DO005', 'dr. Akhmad Akuf, Sp.THT-KL', 'Laki laki', '1975-02-01', 'akhmadakuf@gmail.com', 'PO005', '2017-11-20 00:06:40', '2017-12-06 04:20:33'),
-('DO006', 'dr.Hana Pratiwi, SP.THT-KL', 'Perempuan', '1986-12-05', 'hanapratiwi@gmail.com', 'PO005', '2017-12-06 02:47:35', '2017-12-06 04:20:57'),
-('DO007', 'dr.Andre Himawan, Sp.THT-KL', 'Laki laki', '2017-11-15', 'andreisme@gmail.com', 'PO005', '2017-11-27 03:17:40', '2017-12-06 04:21:35'),
-('DO008', 'dr.Ali Rodhi, Sp.PM', 'Laki-laki', '1987-03-07', 'alirodhi123@gmail.com', 'PO002', '2017-12-06 02:42:26', '2017-12-06 04:21:49'),
-('DO009', 'dr.Afdolash Nur, Sp.M', 'Laki Laki', '1976-12-09', 'afdolashnur@yahoo.co.id', 'PO004', '2017-12-06 02:50:35', '2017-12-06 04:22:12'),
-('DO010', 'dr.Bima Sakti, Sp.KGA', 'Laki laki', '1968-10-11', 'bimasakti@gmail.com', 'PO002', '2017-12-06 02:51:36', '2017-12-06 04:22:24'),
-('DO011', 'dr.Viola Olarisa, Sp.M', 'Perempuan', '1976-12-09', 'violarisa12@gmail.com', 'PO004', '2017-12-06 02:51:36', '2017-12-06 04:23:04'),
-('DO012', 'dr.Intan Tanjung, Sp.MK', 'Perempuan', '1970-02-09', 'intaanjung@yahoo.co.d', 'PO003', '2017-12-06 02:54:49', '2017-12-06 04:22:58'),
-('DO013', 'dr.Muhammad Cahyono, Sp.Ok', 'Laki laki', '1978-02-06', 'muhcahyono_ar@yahoo.co.id', 'PO003', '2017-12-06 02:54:49', '2017-12-06 04:23:19'),
-('DO014', 'dr.Rahmawati Putri, Sp.Ok', 'Perempuan', '2071-02-09', 'rahmawatiputri@gmail.com', 'PO003', '2017-12-06 02:59:15', '2017-12-06 04:23:46'),
-('DO015', 'dr.Faturrohman Ali, Sp.M', 'Laki laki', '1990-04-21', 'faturrohman_al@gmail.com', 'PO004', '2017-12-06 02:59:15', '2017-12-06 04:24:02'),
-('DO016', 'dr.Sakti Aurora, Sp.KGA', 'Laki laki', '1968-10-11', 'sakti_aurora@yahoo.co.id', 'PO002', '2017-12-06 02:50:35', '2017-12-06 04:24:49'),
-('DO017', 'dr.Wijaya Guna, Sp.M', 'Laki laki', '1977-05-19', 'wijayaguna01@gmail.com', 'PO004', '2017-12-06 03:13:51', '2017-12-06 04:25:05'),
-('DO018', 'dr.Ahmad Darius, Sp.A', 'Laki laki', '1989-02-08', 'darius_ahmad01@yahoo.co.id', 'PO001', '2017-12-06 03:16:13', '2017-12-06 04:25:32'),
-('DO019', 'dr.Putri Riza, Sp.A', 'Perempuan', '1987-03-05', 'riza_putri@gmail.com', 'PO001', '2017-12-06 03:18:10', '2017-12-06 04:25:49'),
-('DO020', 'dr.Elin Farzensius, Sp.A', 'Perempuan', '1978-04-15', 'farzensius124@yahoo.co.id', 'PO001', '2017-12-06 03:18:10', '2017-12-06 04:26:10'),
-('DO021', 'dr.Maya Kasih, Sp.PM', 'Perempuan', '1977-06-08', 'maya_kasih16@yahoo.co.id', 'PO002', '2017-12-06 03:22:59', '2017-12-06 04:26:22'),
-('DO022', 'dr.Handayani Ira Sp.OT', 'Perempuan', '1976-12-13', 'IraHand16@gmail.com', 'PO003', '2017-12-06 03:30:12', '2017-12-06 04:27:06'),
-('DO023', 'dr.Wahyu Prakasa Sp.A', 'Laki laki', '1989-12-02', 'wahyupras14@gmail.com', 'PO001', '2017-12-06 03:30:12', '2017-12-06 04:27:22'),
-('DO024', 'dr.Suhartono Yahya Sp.PM', 'Laki laki', '1988-12-04', 'tonoyahya_@yahoo.co.id', 'PO002', '2017-12-06 03:32:45', '2017-12-06 04:27:40'),
-('DO025', 'dr.Salsabila Gina Sp.OT', 'Perempuan', '1986-08-05', 'gina_salsabila@gmail.com', 'PO003', '2017-12-06 03:32:45', '2017-12-06 04:27:59'),
-('DO026', 'dr.Dahlila Pohan Sp.THT-KL', 'Perempuan', '1977-09-04', 'dahlila_pohanar@yahoo.co.id', 'PO005', '2017-12-06 03:37:55', '2017-12-06 07:13:11'),
-('DO027', 'dr.Bimbim Malik Sp.M', 'Laki laki', '1987-10-16', 'bimbimalik@gmail.com', 'PO004', '2017-12-06 03:37:55', '2017-12-06 07:13:47'),
-('DO028', 'dr.Ciara Lee Sp.M', 'Perempuan', '1987-01-12', 'ciaralee17@gmail.com', 'PO004', '2017-12-06 03:41:13', '2017-12-06 07:15:20'),
-('DO029', 'dr.Utari Hustitia Sp.OT', 'Perempuan', '1987-10-04', 'utarihustitia@yahoo.co.id', 'PO003', '2017-12-06 03:41:13', '2017-12-06 07:16:26'),
-('DO030', 'dr.Ahyuli Rahmawati Sp.M', 'Perempuan', '1991-11-04', 'ahyulirah234@yahoo.co.id', 'PO004', '2017-12-06 03:43:45', '2017-12-06 07:17:01'),
-('DO031', 'dr.Rizal Maulana Sp.PM', 'Laki Laki', '1992-09-10', 'zalmaulana@yahoo.co.id', 'PO002', '2017-12-06 03:43:45', '2017-12-06 07:17:48');
+INSERT INTO `dokter` (`id_dokter`, `nama_dokter`, `jk`, `tgl_lahir`, `email`, `id_poli`, `foto`, `created_at`, `updated_at`) VALUES
+('DO001', 'dr. Arief Wijaya Rosli, Sp.A', 'Laki laki', '1975-10-30', 'rosliarief35@gmail.com', 'PO001', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-11-20 00:02:28', '2017-12-11 03:50:05'),
+('DO002', 'dr. Aniek Hartiwi, Sp.M', 'Perempuan', '1980-01-15', 'hartiwaniek_@gmail.com', 'PO004', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-11-20 00:05:11', '2017-12-11 03:48:59'),
+('DO003', 'dr. Rulik Rufiati, Sp.Ok', 'Perempuan', '1970-12-05', 'rulikRF_10@gmail.com', 'PO003', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-11-20 00:05:11', '2017-12-11 03:49:13'),
+('DO004', 'dr. Abdul Rochim, Sp.M', 'Laki laki', '1967-11-12', 'abdulrochim@gmail.com', 'PO004', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-11-20 00:06:40', '2017-12-11 03:50:04'),
+('DO005', 'dr. Akhmad Akuf, Sp.THT-KL', 'Laki laki', '1975-02-01', 'akhmadakuf@gmail.com', 'PO005', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-11-20 00:06:40', '2017-12-11 03:50:01'),
+('DO006', 'dr.Hana Pratiwi, SP.THT-KL', 'Perempuan', '1986-12-05', 'hanapratiwi@gmail.com', 'PO005', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-12-06 02:47:35', '2017-12-11 03:49:08'),
+('DO007', 'dr.Andre Himawan, Sp.THT-KL', 'Laki laki', '2017-11-15', 'andreisme@gmail.com', 'PO005', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-11-27 03:17:40', '2017-12-11 03:50:00'),
+('DO008', 'dr.Ali Rodhi, Sp.PM', 'Laki-laki', '1987-03-07', 'alirodhi123@gmail.com', 'PO002', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 02:42:26', '2017-12-11 03:49:58'),
+('DO009', 'dr.Afdolash Nur, Sp.M', 'Laki Laki', '1976-12-09', 'afdolashnur@yahoo.co.id', 'PO004', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 02:50:35', '2017-12-11 03:49:57'),
+('DO010', 'dr.Bima Sakti, Sp.KGA', 'Laki laki', '1968-10-11', 'bimasakti@gmail.com', 'PO002', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 02:51:36', '2017-12-11 03:49:55'),
+('DO011', 'dr.Viola Olarisa, Sp.M', 'Perempuan', '1976-12-09', 'violarisa12@gmail.com', 'PO004', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-12-06 02:51:36', '2017-12-11 03:49:15'),
+('DO012', 'dr.Intan Tanjung, Sp.MK', 'Perempuan', '1970-02-09', 'intaanjung@yahoo.co.d', 'PO003', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-12-06 02:54:49', '2017-12-11 03:49:18'),
+('DO013', 'dr.Muhammad Cahyono, Sp.Ok', 'Laki laki', '1978-02-06', 'muhcahyono_ar@yahoo.co.id', 'PO003', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 02:54:49', '2017-12-11 03:49:53'),
+('DO014', 'dr.Rahmawati Putri, Sp.Ok', 'Perempuan', '2071-02-09', 'rahmawatiputri@gmail.com', 'PO003', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-12-06 02:59:15', '2017-12-11 03:49:21'),
+('DO015', 'dr.Faturrohman Ali, Sp.M', 'Laki laki', '1990-04-21', 'faturrohman_al@gmail.com', 'PO004', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 02:59:15', '2017-12-11 03:49:50'),
+('DO016', 'dr.Sakti Aurora, Sp.KGA', 'Laki laki', '1968-10-11', 'sakti_aurora@yahoo.co.id', 'PO002', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 02:50:35', '2017-12-11 03:49:49'),
+('DO017', 'dr.Wijaya Guna, Sp.M', 'Laki laki', '1977-05-19', 'wijayaguna01@gmail.com', 'PO004', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 03:13:51', '2017-12-11 03:49:46'),
+('DO018', 'dr.Ahmad Darius, Sp.A', 'Laki laki', '1989-02-08', 'darius_ahmad01@yahoo.co.id', 'PO001', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 03:16:13', '2017-12-11 03:49:45'),
+('DO019', 'dr.Putri Riza, Sp.A', 'Perempuan', '1987-03-05', 'riza_putri@gmail.com', 'PO001', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-12-06 03:18:10', '2017-12-11 03:49:22'),
+('DO020', 'dr.Elin Farzensius, Sp.A', 'Perempuan', '1978-04-15', 'farzensius124@yahoo.co.id', 'PO001', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-12-06 03:18:10', '2017-12-11 03:49:25'),
+('DO021', 'dr.Maya Kasih, Sp.PM', 'Perempuan', '1977-06-08', 'maya_kasih16@yahoo.co.id', 'PO002', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-12-06 03:22:59', '2017-12-11 03:49:27'),
+('DO022', 'dr.Handayani Ira Sp.OT', 'Perempuan', '1976-12-13', 'IraHand16@gmail.com', 'PO003', 'http://192.168.0.3:3000/images/dokter/DO002.jpg', '2017-12-06 03:30:12', '2017-12-11 03:49:32'),
+('DO023', 'dr.Wahyu Prakasa Sp.A', 'Laki laki', '1989-12-02', 'wahyupras14@gmail.com', 'PO001', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 03:30:12', '2017-12-11 03:49:44'),
+('DO024', 'dr.Suhartono Yahya Sp.PM', 'Laki laki', '1988-12-04', 'tonoyahya_@yahoo.co.id', 'PO002', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 03:32:45', '2017-12-11 03:49:41'),
+('DO025', 'dr.Salsabila Gina Sp.OT', 'Perempuan', '1986-08-05', 'gina_salsabila@gmail.com', 'PO003', 'http://192.168.0.3:3000/images/dokter/DO001.jpg', '2017-12-06 03:32:45', '2017-12-11 03:49:39'),
+('DO026', 'dr.Dahlila Pohan Sp.THT-KL', 'Perempuan', '1977-09-04', 'dahlila_pohanar@yahoo.co.id', 'PO005', '', '2017-12-06 03:37:55', '2017-12-06 07:13:11'),
+('DO027', 'dr.Bimbim Malik Sp.M', 'Laki laki', '1987-10-16', 'bimbimalik@gmail.com', 'PO004', '', '2017-12-06 03:37:55', '2017-12-06 07:13:47'),
+('DO028', 'dr.Ciara Lee Sp.M', 'Perempuan', '1987-01-12', 'ciaralee17@gmail.com', 'PO004', '', '2017-12-06 03:41:13', '2017-12-06 07:15:20'),
+('DO029', 'dr.Utari Hustitia Sp.OT', 'Perempuan', '1987-10-04', 'utarihustitia@yahoo.co.id', 'PO003', '', '2017-12-06 03:41:13', '2017-12-06 07:16:26'),
+('DO030', 'dr.Ahyuli Rahmawati Sp.M', 'Perempuan', '1991-11-04', 'ahyulirah234@yahoo.co.id', 'PO004', '', '2017-12-06 03:43:45', '2017-12-06 07:17:01'),
+('DO031', 'dr.Rizal Maulana Sp.PM', 'Laki Laki', '1992-09-10', 'zalmaulana@yahoo.co.id', 'PO002', '', '2017-12-06 03:43:45', '2017-12-06 07:17:48');
 
 -- --------------------------------------------------------
 
@@ -236,7 +237,7 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`id_pasien`, `nama_pasien`, `tgl_lahir`, `jk`, `telepon`, `alamat`, `email`, `bpjs`, `updated_at`, `created_at`) VALUES
-('PA001', 'Rully Siahaan', '2000-05-17', 'L', '089273582691', 'Jl. Laksdya M Nasir No. 56, Surabaya\r\n', '', 0, '2017-11-20 00:15:00', '0000-00-00 00:00:00'),
+('PA001', 'Rully Siahaan', '2000-05-17', 'L', '089273582691', 'Jl. Laksdya M Nasir No. 56, Surabaya\r\n', 'rully@gmail.com', 0, '2017-12-11 03:43:33', '0000-00-00 00:00:00'),
 ('PA002', 'Waras Susanto', '1960-06-23', 'L', '081735729618', 'Jl. Moro Krembangan, Surabaya\r\n', '', 1, '2017-11-20 00:15:38', '0000-00-00 00:00:00'),
 ('PA003', 'User INI', '2017-12-12', 'L', '8028028', 'ajdhajkdh', 'user@gmail.com', 1, '2017-12-06 03:44:22', '2017-12-06 03:44:22');
 
@@ -288,7 +289,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `updated_at`, `created_at`) VALUES
-(1, 'user@gmail.com', '12345678', 4, '2017-12-06 03:18:21', '2017-12-06 03:18:21');
+(1, 'user@gmail.com', '12345678', 4, '2017-12-06 03:18:21', '2017-12-06 03:18:21'),
+(2, 'rully@gmail.com', 'rully', 4, '2017-12-11 03:43:49', '2017-12-11 03:43:49');
 
 --
 -- Indexes for dumped tables
@@ -361,7 +363,7 @@ ALTER TABLE `jam_praktek`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

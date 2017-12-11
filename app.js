@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.static('/uploads/'));
 
 app.use('/icon',express.static(__dirname + '/public/icon'));
+app.use('/images',express.static(__dirname + '/public/images'));
 // So now, you can use http://localhost:5000/resources/myImage.jpg to serve all the images instead of http://localhost:5000/images/myImage.jpg. 
 app.use('/', routes);
 app.use('/users', users);

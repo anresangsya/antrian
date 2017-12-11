@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include head %>
+</head>
+<body style="background-color:white;">
+	<% include navbar %>
+
+	<div class="container">
+		<div class="row">
+			<h3 align="center">DAFTAR DOKTER</h3>
+			<h3 align="center">POLI MATA</h3>
+			<div class="form-group" style="margin-top:30px;">
+				<label for="poli" class="col-sm-1 control-label">Pilih Poli: </label>
+				<div class="col-sm-2">
+					<select class="form-control" name="poli">
+						<option selected="selected">Nama Poli</option>
+							<?php
+								for($a=1; $a<=31;$a+=1){
+									echo"<option value='$a'>$a</option>";
+								}
+							?>
+					</select>
+				</div>
+			</div>
+
+			<div class="col-lg-12" style="border-left: 10px solid green; background-color: #FAFAFA; margin-top: 30px;">
+				<div class="col-sm-3">
+					<center>
+						<img src="../../images/sangsya.jpg" class="img-responsive" style="width:100%; margin-top:15px;" alt="Image">
+					</center>
+					<h4 align="center">Eka Anre Sangsya</h4>
+					<h5 align="center">Laki-laki</h5>
+					<h5 align="center">25 Tahun</h5>
+					<h5 align="center" style="color:green;"><b>AVAILABLE</b></h5>
+					<center>
+						<a href="antrian.php" class="btn btn-success" role="button" style="margin-bottom: 15px;">Ambil Nomor Antrian</a>
+					</center>
+				</div>
+				<div class="col-sm-9">
+					<h4>Jadwal Praktek</h4>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Hari</th>
+								<th>Waktu</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Senin</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Selasa</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Rabu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Kamis</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Jumat</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Sabtu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Minggu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- orange -->
+			<div class="col-lg-12" style="border-left: 10px solid orange; background-color: #FAFAFA; margin-top: 30px;">
+				<div class="col-sm-3">
+					<center>
+						<img src="../../images/sangsya.jpg" class="img-responsive" style="width:100%; margin-top:15px;" alt="Image">
+					</center>
+					<h4 align="center">Eka Anre Sangsya</h4>
+					<h5 align="center">Laki-laki</h5>
+					<h5 align="center">25 Tahun</h5>
+					<h5 align="center" style="color:orange"><b>WILL BE AVAILABLE AT 09.00 WIB</b></h5>
+					<center>
+						<a href="antrian.php" class="btn btn-warning" role="button" style="margin-bottom: 15px;">Ambil Nomor Antrian</a>
+					</center>
+				</div>
+				<div class="col-sm-9">
+					<h4>Jadwal Praktek</h4>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Hari</th>
+								<th>Waktu</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Senin</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Selasa</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Rabu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Kamis</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Jumat</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Sabtu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Minggu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- red -->
+			<div class="col-lg-12" style="border-left: 10px solid red; background-color: #FAFAFA; margin-top: 30px;">
+				<div class="col-sm-3">
+					<center>
+						<img src="../../images/sangsya.jpg" class="img-responsive" style="width:100%; margin-top:15px;" alt="Image">
+					</center>
+					<h4 align="center">Eka Anre Sangsya</h4>
+					<h5 align="center">Laki-laki</h5>
+					<h5 align="center">25 Tahun</h5>
+					<h5 align="center" style="color:red"><b>NOT AVAILABLE</b></h5>
+					<center>
+						<a href="antrian.php" class="btn btn-danger" role="button" style="margin-bottom: 15px;">Ambil Nomor Antrian</a>
+					</center>
+				</div>
+				<div class="col-sm-9">
+					<h4>Jadwal Praktek</h4>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Hari</th>
+								<th>Waktu</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Senin</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Selasa</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Rabu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Kamis</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Jumat</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Sabtu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+							<tr>
+								<td>Minggu</td>
+								<td>13.00 - 15.00 WIB</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<hr>
+	</div>
+</body>
+</html>
