@@ -19,7 +19,7 @@ router.get('/api/:id?',function(req, res, next){
                 if (rows < 1) {
                     res.json({status:false, message:"Gagal", data:rows});
                 } else {
-                    res.json({status:true, message:"Berhasil", data:rows});
+                    res.json({status:true, message:"Berhasil", data:rows[0]});
                 }
             }
         });

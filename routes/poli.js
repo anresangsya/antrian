@@ -106,9 +106,18 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/detail/:id', function(req, res, next) {
-    Dokter.getDokterByIdPoli(req.params.id, function(err,rows){
-        res.json(rows);
-    });
+    var id = req.params.id;
+    request('http://localhost:3000/dokter/poli/api', [id], function(error, response, body) {
+        var data = JSON.parse(body);
+        res.json(data);
+        // res.render('poli', { title: 'Daftar Poli', result: data.data});
+    }); 
+
+    // Dokter.getDokterByIdPoli(req.params.id, function(err,rows){
+    //     // res.json(rows);
+    //     var data = JSON.parse(rows);
+    //     res.render('detailPoli', { title: 'Daftar Dokter', result: data.data});
+    // });
 });
 
 module.exports=router;
