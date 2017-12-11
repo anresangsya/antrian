@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request');
+var rp = require('request-promise');
+var fetch = require('node-fetch');
 var Poli = require('../models/Poli');
 
 // API
@@ -93,7 +96,14 @@ var url = 'localhost:3000/poli/api';
 
 // view
 router.get('/', function(req, res, next) {
-  res.render('poli', { title: 'Daftar Poli' });
+    // request(url, function(error, response, body) {
+    //     // var data_poli = new Array();
+    //     // var data = JSON.parse(body).data_poli;
+    //     res.json(body);
+    //     console.log(body);
+    //     // res.render('poli', { title: 'Daftar Poli', result: body});
+    // }); 
+
 });
 
 

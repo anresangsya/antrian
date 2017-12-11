@@ -14,7 +14,12 @@ router.get('/api/:id?',function(req, res, next){
                 if (rows < 1) {
                     res.json({status:false, message:"Gagal", data:rows});
                 } else {
-                    res.json({status:true, message:"Berhasil", data:rows});
+                    var jadwal = new Array();
+                    // Dokter.getJadwalDokter(req.params.id, function(error, row){
+                    //     jadwal = row;
+                    // });
+
+                    res.json({status:true, message:"Berhasil", data:{rows, jadwal:jadwal}});
                 }
             }
         });
@@ -26,12 +31,18 @@ router.get('/api/:id?',function(req, res, next){
                 res.json({status:false, message:"Gagal", data:err});
             }
             else
-            {
+            {   
                 res.json({status:true, message:"Berhasil", data:rows});
             }
      
         });
     }
+});
+
+router.get('/api/jadwal/:id?', function(req, res, next){
+    Dokter.getJadwalDokter(req.params.id, function(error, row){
+        res.json(row);
+    });
 });
 
 router.get('/api/poli/:id?',function(req, res, next){
