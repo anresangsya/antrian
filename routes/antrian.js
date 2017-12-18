@@ -25,13 +25,13 @@ router.post('/dokter/ambilantrian', function(req, res, next) {
 		[id_dokter, id_pasien, no_antrian], function(error, results, fields) {
 			if(error){
 			    res.send({
-			      "code":400,
+			      "status": false,
 			      "failed":"error ocurred",
 			      "message": error
 			    });
 			} else {
 				res.send({
-			      "code":200,
+			      "status": true,
 			      "success":"nomor antrian "+no_antrian+" berhasil di pesan"
 			    });
 			}
