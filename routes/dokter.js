@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Dokter=require('../models/Dokter');
+var db = require('../dbconnection');
 
 // API
 router.get('/api/:id?',function(req, res, next){
@@ -126,8 +127,13 @@ router.get('/', function(req, res, next) {
   res.render('dokter', { title: 'Dokter' });
 });
 
-router.get('/dashboard', function(req, res, next) {
-  res.render('dashboardDokter', { title: 'Dokter' });
+router.get('/dashboard/:email', function(req, res, next) {
+    var email = req.params.email;
+    db.query("SELECT * FROM dokter WHERE email = ?", [email], function(err, rows){
+        // res.send(rows[0]);
+        res.render('dokter/dashboard', { title: 'Dokter', data: rows[0]});
+
+    });
 });
 
 router.get('/profil', function(req, res, next) {

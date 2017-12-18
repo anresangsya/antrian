@@ -72,4 +72,44 @@ router.post('/register', function(req, res, next) {
 		});
 });
 
+router.post('/api/login', function(req, res, next) {
+	var email = req.body.email,
+		password = req.body.password;
+
+	db.query("SELECT * FROM users WHERE email=?", [email], function(error, results, fields) {
+		if(error){
+			res.send({
+		      "status" : 400,
+		      "message" : "Error ocurred"
+		    });
+		} else {
+			if(results.length > 0){
+		      	if(results[0].password == password){
+			        
+		      		if (results[0].role == 2) {
+			        	res.redirect('/dokter/dashboard/'+ results[0].email);
+			        } else if (results[0].role == 3) {
+			        	res.send({
+					        "message":"apoteker"
+					     });
+			        }
+		      	
+		      	} else {
+		      		res.send({
+			          "status":201,
+			          "message":"Email and password does not match",
+			          "data" : {}
+			        });
+		      	}
+		  	} else{
+		  		res.send({
+			        "status":202,
+			        "message":"Email does not exits",
+			        "data" : {}
+			     });
+			}
+		}
+	});
+});
+
 module.exports = router;
