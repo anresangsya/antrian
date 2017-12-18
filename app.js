@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var poli = require('./routes/poli');
 var dokter = require('./routes/dokter');
 var pasien = require('./routes/pasien');
+var antrian = require('./routes/antrian');
 var Tasks=require('./routes/Tasks');
 
 var app = express();
@@ -37,6 +38,7 @@ app.use('/users', users);
 app.use('/dokter', dokter);
 app.use('/poli', poli);
 app.use('/pasien', pasien);
+app.use('/antrian', antrian);
 app.use('/Tasks',Tasks);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

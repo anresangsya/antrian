@@ -126,5 +126,12 @@ router.get('/', function(req, res, next) {
   res.render('dokter', { title: 'Dokter' });
 });
 
+router.get('/dashboard', function(req, res, next) {
+  res.render('dashboardDokter', { title: 'Dokter' });
+});
+
+router.get('/profil', function(req, res, next) {
+  res.render('profilDokter', { title: 'Dokter' });
+});
 
 module.exports=router;

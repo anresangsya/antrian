@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="row">
 			<h3 align="center"><%= title %></h3>
-			<h3 align="center"><%= result[0].nama_poli %></h3>
+			<h3 align="center">Poli <%= result[0].nama_poli %></h3>
 			<div class="form-group" style="margin-top:30px;">
 				<label for="poli" class="col-sm-1 control-label">Pilih Poli: </label>
 				<div class="col-sm-2">
@@ -24,15 +24,16 @@
 				</div>
 			</div>
 
+		<% result.forEach(function(result) { %>
 
 			<div class="col-lg-12" style="border-left: 10px solid green; background-color: #FAFAFA; margin-top: 30px;">
 				<div class="col-sm-3">
 					<center>
-						<img src="../../images/sangsya.jpg" class="img-responsive" style="width:100%; margin-top:15px;" alt="Image">
+						<img src="<%= result.foto %>" class="img-responsive" style="width:100%; margin-top:15px;" alt="Image">
 					</center>
-					<h4 align="center">Eka Anre Sangsya</h4>
-					<h5 align="center">Laki-laki</h5>
-					<h5 align="center">25 Tahun</h5>
+					<h4 align="center"><%= result.nama_dokter %></h4>
+					<h5 align="center"><%= result.jk %></h5>
+					<h5 align="center">25 tahun</h5>
 					<h5 align="center" style="color:green;"><b>AVAILABLE</b></h5>
 					<center>
 						<a href="antrian.php" class="btn btn-success" role="button" style="margin-bottom: 15px;">Ambil Nomor Antrian</a>
@@ -80,6 +81,9 @@
 					</table>
 				</div>
 			</div>
+		
+		<% }); %>
+
 
 			<!-- orange -->
 			<div class="col-lg-12" style="border-left: 10px solid orange; background-color: #FAFAFA; margin-top: 30px;">
